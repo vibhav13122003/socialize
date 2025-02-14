@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input__field {
+    @apply text-secondary dark:text-white bg-accent/10 dark:bg-black/10 dark:border dark:border-white/10 w-full outline-none py-2 pl-4 pr-12 rounded;
+  }
+  .navigation__group {
+    @apply flex gap-2 items-center p-2 text-secondary dark:text-gray-400 dark:hover:text-gray-300 hover:bg-accent/30 hover:cursor-pointer hover:text-accent shadow-md bg-bgContainers dark:bg-gray-800 dark:hover:bg-gray-700;
+  }
+  .navigation__group__not__allowed {
+    @apply flex gap-2 items-center p-2 text-secondary dark:text-gray-400 dark:hover:text-gray-300 hover:bg-accent/30 hover:cursor-not-allowed hover:text-accent shadow-md bg-bgContainers dark:bg-gray-800 dark:hover:bg-gray-700;
+  }
+}
+
+@font-face {
+  font-family: "OpenMedium";
+  src: url("../public/Open_Sans/static/OpenSans-Medium.ttf");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "UbuntuMedium";
+  src: url("../public/Ubuntu/Ubuntu-Medium.ttf");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "UbuntuThin";
+  src: url("../public/Ubuntu/Ubuntu-Light.ttf");
+  font-weight: 400;
+}
+
+@layer base {
+  html {
+    font-family: "OpenMedium", sans-serif;
+  }
+}
+
+
+.comment-image {
+  min-height: 1.7rem;
+  min-width: 1.7rem;
+  max-height: 1.7rem;
+  max-width: 1.7rem;
+}
+.post-pic {
+  min-height: 3rem;
+  min-width: 3rem;
+  max-height: 3rem;
+  max-width: 3rem;
+}
+.sidebar-avatar {
+  min-height: 4rem;
+  min-width: 4rem;
+  max-height: 4rem;
+  max-width: 4rem;
+}
+
+input.invalid,
+input:focus.invalid,
+input:-webkit-autofill:focus.invalid {
+  border-bottom: 1px solid #df4444 !important;
+}
+
+input.valid,
+input:focus.valid,
+input:-webkit-autofill:focus.valid {
+  border-bottom: 1px solid #2eb97c !important;
+}
+
+/* This is the pulsing loader animation */
+.loader {
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+.loader div {
+  position: absolute;
+  border: 4px solid #3f72af;
+  border-radius: 50%;
+  animation: pulse 1s ease-out infinite;
+}
+
+.loader div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+.svg-helper {
+  text-indent: 0;
+  text-transform: none;
+  direction: ltr;
+  enable-background: accumulate;
+}
+
+@keyframes pulse {
+  0% {
+    top: 32px;
+    left: 32px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+
+  100% {
+    top: 0;
+    left: 0;
+    width: 64px;
+    height: 64px;
+    opacity: 0;
+  }
+}
+
+.animate-loading {
+  opacity: 0.9;
+  animation: animateloader 1s linear infinite alternate;
+}
+
+.animate-text {
+  animation: animatetext 1s linear infinite alternate;
+}
+
+@keyframes animatetext {
+  0% {
+    background-color: hsl(218, 1%, 20%);
+  }
+  100% {
+    background-color: hsl(218, 1%, 22%);
+  }
+}
+
+@keyframes animateloader {
+  0% {
+    background-color: hsl(215, 28%, 5%);
+  }
+  100% {
+    background-color: hsl(215, 28%, 8%);
+  }
+}
